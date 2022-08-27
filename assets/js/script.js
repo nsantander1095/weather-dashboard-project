@@ -1,5 +1,6 @@
 var appid = 'a83cd16f45a517250a52f83592bb80be'; // API KEY 1: 485bbc753e29e9770f09ca55c32c6d79 API KEY 2: a83cd16f45a517250a52f83592bb80be
 var q = 'Chicago';
+var searchBtnEl = document.querySelector('#search');
 
 var geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${q}&appid=${appid}`;
 
@@ -44,7 +45,17 @@ var getGeo = function (locations) {
 
     getOneCall(city);
 }
+var displayForecast = function () {
+    
+}
+var renderLastCities = function () {
+
+}
 
 fetch(geoURL)
     .then(toJSON)
     .then(getGeo);
+
+searchBtnEl.addEventListener('click', function() {
+
+})
