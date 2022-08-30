@@ -17,12 +17,17 @@ var displayWeather = function (data, city) {
     var windEl = document.createElement('p');
     var humidityEl = document.createElement('p');
     var uvIndexEl = document.createElement('p');
+    var iconEl = document.createElement('img');
+    var icon = data.current.weather[0].icon;
+    iconEl.alt = icon;
+    iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
     h2El.textContent = city.name + " (" + moment(data.dt).format('M/D/YYYY') + ")";
     tempEl.textContent = "Temp: " + data.current.temp + "\xB0F";
     windEl.textContent = "Wind: " + data.current.wind_speed + "MPH";
     humidityEl.textContent = "Humidity: " + data.current.humidity + "%";
     uvIndexEl.textContent = "UV Index: " + data.current.uvi;
     currentWeatherLocale.appendChild(h2El);
+    currentWeatherLocale.appendChild(iconEl);
     currentWeatherLocale.appendChild(tempEl);
     currentWeatherLocale.appendChild(windEl);
     currentWeatherLocale.appendChild(humidityEl);
@@ -95,7 +100,7 @@ var displayForecast = function (data) {
         h4El.className = 'card-title';
         cardTextEl.className = 'card-text';
         h4El.textContent = moment(data.daily[i].dt, 'X').format('M/D/YYYY');
-        tempEl.textContent = "Temp: " + data.daily[i].temp.day + "\xB0 F";
+        tempEl.textContent = "Temp: " + data.daily[i].temp.day + "\xB0F";
         windEl.textContent = "Wind: " + data.daily[i].wind_speed + "MPH";
         humidityEl.textContent = "Humidity: " + data.daily[i].humidity + "%";
         forecastEl.appendChild(cardEl);
