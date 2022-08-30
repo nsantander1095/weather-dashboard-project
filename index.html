@@ -27,13 +27,13 @@
         <h1>Weather Dashboard</h1>
        </div>
     </header>
-    <main class = "container-fluid mx-0">
+    <main class = "container-fluid mx-0 mt-4">
         <section class = "row">
             <!-- search form and previous cities -->
             <div class = "col-lg-2">
                 <h2>Search for a city:</h2>
                 <section class = "pb-3">
-                    <form>
+                    <form id = "searchForm">
                         <div class="form-group">
                           <input type="text" class="form-control" id="cityInput" placeholder="City Name">
                         </div>
@@ -51,7 +51,7 @@
                 <section id = "currentWeather" class = "col-lg-12">
 
                 </section>
-                <section id = "fiveForecast" class = "row col-lg-12">
+                <section id = "fiveForecast" class = "row d-flex col-lg-12">
 
                 </section>
             </div>
