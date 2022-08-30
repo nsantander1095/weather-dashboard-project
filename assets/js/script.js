@@ -20,7 +20,7 @@ var displayWeather = function (data, city) {
     var iconEl = document.createElement('img');
     var icon = data.current.weather[0].icon;
     iconEl.alt = icon;
-    iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+    iconEl.src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
     h2El.textContent = city.name + " (" + moment(data.dt).format('M/D/YYYY') + ")";
     tempEl.textContent = "Temp: " + data.current.temp + "\xB0F";
     windEl.textContent = "Wind: " + data.current.wind_speed + "MPH";
@@ -93,7 +93,7 @@ var displayForecast = function (data) {
         var iconEl = document.createElement('img');
         var icon = data.daily[i].weather[0].icon;
         iconEl.alt = icon;
-        iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+        iconEl.src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
         cardEl.className = 'card m-3';
         cardEl.style.width = '10rem';
         cardBodyEl.className = 'card-body';
@@ -119,7 +119,7 @@ var searchHandler = function (event) {
 
     if (event.target.matches('button')) {
         q = document.querySelector('#cityInput');
-        var geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${q.value}&appid=${appid}`;
+        var geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${q.value}&appid=${appid}`;
     
         fetch(geoURL)
             .then(toJSON)
@@ -130,7 +130,7 @@ var searchHandler = function (event) {
 var prevCityHandler = function (event) {
     event.preventDefault();
     q = event.target.textContent;
-    var geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${q}&appid=${appid}`;
+    var geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${q}&appid=${appid}`;
 
     fetch(geoURL)
         .then(toJSON)
